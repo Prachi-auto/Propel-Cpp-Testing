@@ -9,4 +9,6 @@ Aspects to test:
    - Suggest the algorithm which consumes less runtime
 - MISRA Warnings
 - Coverity warnings
+- Test duplications on GTest files (on incremental testing)
+
 - Clean code guidelines - https://github.com/martinmurciego/good-books/blob/master/Clean%20Code_%20A%20Handbook%20of%20Agile%20Software%20Craftsmanship%20-%20Robert%20C.%20Martin.pdf
