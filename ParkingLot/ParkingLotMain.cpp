@@ -6,20 +6,21 @@ int main() {
     ParkingLot parkingLot(2, 3, 2);  // 2 compact, 3 regular, 2 large spots
     
     // Create vehicles
-    Vehicle* car1 = new Vehicle("CAR001", Vehicle::Type::Car);
-    Vehicle* car2 = new Vehicle("CAR002", Vehicle::Type::Car);
-    Vehicle* motorcycle = new Vehicle("MOTO001", Vehicle::Type::Motorcycle);
-    Vehicle* truck = new Vehicle("TRUCK001", Vehicle::Type::Truck);
+    auto car1 = std::make_unique<Vehicle>("CAR001", Vehicle::Type::Car);  
+    auto car2 = std::make_unique<Vehicle>("CAR002", Vehicle::Type::Car);  
+    auto motorcycle = std::make_unique<Vehicle>("MOTO001", Vehicle::Type::Motorcycle);  
+    auto truck = std::make_unique<Vehicle>("TRUCK001", Vehicle::Type::Truck);  
+auto truck = std::make_unique<Vehicle>("TRUCK001", Vehicle::Type::Truck);  
     
-    if (parkingLot.parkVehicle(car1)) {
+    if (parkingLot.parkVehicle(car1.get())) {
         std::cout << "CAR001 - Parked successfully: ";
     }
     
-    if (parkingLot.parkVehicle(motorcycle)) {
+    if (parkingLot.parkVehicle(motorcycle.get())) {
         std::cout << "MOTO001 - Parked successfully: ";
     }
     
-    if (parkingLot.parkVehicle(truck)) {
+    if (parkingLot.parkVehicle(truck.get())) {
         std::cout << "TRUCK001 - Parked successfully: ";
     }
     

@@ -1,29 +1,22 @@
 #include "ParkingLot.hpp"
 
 ParkingLot::ParkingLot(int numCompact, int numRegular, int numLarge) 
-    : capacity(numCompact + numRegular + numLarge), availableSpots(capacity) {
+    : capacity(numCompact + numRegular + numLarge), availableSpots(capacity) {  
     
-    int spotNumber = 1;
+    int spotNumber = 1;  
+    spots.reserve(capacity);  
     
-    // Create compact spots
-    for (int i = 0; i < numCompact; i++) {
-        spots.push_back(new ParkingSpot(spotNumber++, ParkingSpot::Type::Compact));
+    // Create compact spots  
+    for (int i = 0; i < numCompact; ++i) {  
+        spots.push_back(std::make_unique<ParkingSpot>(spotNumber++, ParkingSpot::Type::Compact));  
     }
-    
-    // Create regular spots
-    for (int i = 0; i < numRegular; i++) {
-        spots.push_back(new ParkingSpot(spotNumber++, ParkingSpot::Type::Regular));
+    // Create regular spots  
+    for (int i = 0; i < numRegular; ++i) {  
+        spots.push_back(std::make_unique<ParkingSpot>(spotNumber++, ParkingSpot::Type::Regular));  
     }
-    
-    // Create large spots
-    for (int i = 0; i < numLarge; i++) {
-        spots.push_back(new ParkingSpot(spotNumber++, ParkingSpot::Type::Large));
-    }
-}
-
-ParkingLot::~ParkingLot() {
-    for (auto spot : spots) {
-        delete spot;
+    // Create large spots  
+    for (int i = 0; i < numLarge; ++i) {  
+        spots.push_back(std::make_unique<ParkingSpot>(spotNumber++, ParkingSpot::Type::Large));  
     }
 }
 
@@ -70,7 +63,7 @@ ParkingSpot* ParkingLot::findVehicle(const std::string& licensePlate) const {
 
 
 ParkingSpot* ParkingLot::findAvailableSpot(const Vehicle* vehicle) const {
-    for (auto spot : spots) {
+    for (const auto& spot : spots) {
         if (spot->isAvailable() && spot->canFitVehicle(vehicle)) {
             return spot;
         }

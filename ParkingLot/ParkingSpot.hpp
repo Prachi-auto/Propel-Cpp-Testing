@@ -11,14 +11,14 @@ struct ParkingSpot
         Regular,
         Large
     };
-    ParkingSpot(int spotNumber, Type type);
+    ParkingSpot(ParkingSpotId spotNumber, Type type);
 
     int getSpotNumber();
     Type getType() const;
     Vehicle* getVehicle() const;
     bool isAvailable() const;
 
-    bool canFitVehicle(const Vehicle* vehicle);
+    bool canFitVehicle(const Vehicle* vehicle) const;
     bool parkVehicle(Vehicle* vehicle);
     Vehicle* removeVehicle();
 

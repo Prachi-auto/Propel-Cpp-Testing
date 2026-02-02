@@ -1,12 +1,10 @@
 #include "ParkingSpot.hpp"
-#include <memory>
-
 ParkingSpot::ParkingSpot(int spotNumber, Type type)
     : m_spotNumber(spotNumber), m_spotType(type)
 {
 }
 
-int ParkingSpot::getSpotNumber()
+int ParkingSpot::getSpotNumber() const
 {
     return m_spotNumber;
 }
@@ -30,7 +28,7 @@ bool ParkingSpot::isAvailable() const
     return m_occupiedByVehicle == nullptr;
 }
 
-bool ParkingSpot::canFitVehicle(const Vehicle* vehicle)
+bool ParkingSpot::canFitVehicle(const Vehicle* vehicle) const
 {
     if (!vehicle)
     {
@@ -45,8 +43,6 @@ bool ParkingSpot::canFitVehicle(const Vehicle* vehicle)
         return m_spotType == Type::Compact;
     case Vehicle::Type::Truck:
         return m_spotType == Type::Large;
-    default:
-        return false;
     }
     return false;
 }

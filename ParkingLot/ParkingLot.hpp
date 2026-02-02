@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 #include <map>
 #include <string>
@@ -20,7 +21,7 @@ public:
 private:
     ParkingSpot* findAvailableSpot(const Vehicle* vehicle) const;
 
-    std::vector<ParkingSpot*> spots;
+    std::vector<std::unique_ptr<ParkingSpot>> spots;
     std::map<LicensePlate, ParkingSpot*> occupiedSpots;
     int capacity;
     int availableSpots;

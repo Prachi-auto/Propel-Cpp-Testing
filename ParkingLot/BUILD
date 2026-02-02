@@ -3,6 +3,7 @@ load("@rules_cc//cc:defs.bzl", "cc_binary")
 cc_binary(
     name = "parking_lot",
     srcs = [
+        "ParkingLot.cpp",
         "ParkingLotMain.cpp",
         "ParkingSpot.cpp",
     ],
