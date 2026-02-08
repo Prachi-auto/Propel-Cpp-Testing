@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "ObjectFusion/radar_object.proto";
+
+enum ObjectType
+{
+    UNKNOWN = 0;
+    CAR = 1;
+    TRUCK = 2;
+    PEDESTRIAN = 3;
+    MOTORBIKE = 4;
+}
