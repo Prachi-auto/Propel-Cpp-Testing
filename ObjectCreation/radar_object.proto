@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "ObjectFusion/object_type.proto";
+
+message RadarObject
+{
+    uint32 object_id = 1;
+    float position_x = 2;
+    float position_y = 3;
+    float velocity_x = 4;
+    float velocity_y = 5;
+    float length = 6;
+    float width = 7;
+    ObjectType object_type = 5;
+}
