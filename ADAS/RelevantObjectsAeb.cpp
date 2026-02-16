@@ -2,7 +2,7 @@
 
 Object RelevantObjectsAeb::getTargetObject(const ObjectList& allObjects)
 {
-    Object* targetObject = nullptr;
+    const Object* targetObject = nullptr;
     // Filter objects relevant for AEB
     for (const auto& object : allObjects)
     {
@@ -10,7 +10,7 @@ Object RelevantObjectsAeb::getTargetObject(const ObjectList& allObjects)
         {
             if(targetObject == nullptr || object.m_position.m_x < targetObject->m_position.m_x)
             {
-                targetObject = const_cast<Object*>(&object);
+                targetObject = &object;
             }
         }
     }

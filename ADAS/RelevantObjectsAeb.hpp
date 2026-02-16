@@ -9,10 +9,10 @@ class RelevantObjectsAeb
 public:
     using ObjectList = std::vector<Object>;
     
-    Object getTargetObject(const ObjectList& allObjects);
+    static Object getTargetObject(const ObjectList& allObjects);
 
 private:
-    bool isRelevantForAeb(const Object& object);
+    static bool isRelevantForAeb(const Object& object);
 };
 
 #endif

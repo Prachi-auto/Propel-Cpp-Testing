@@ -4,10 +4,11 @@ cc_binary(
     name = "dry",
     srcs = [
         "main.cpp",
-        "Object.cpp",
         "Object.hpp",
         "LaneId.hpp", 
+        "RelevantObjectsAcc.cpp",
         "RelevantObjectsAcc.hpp",
+        "RelevantObjectsAeb.cpp",
         "RelevantObjectsAeb.hpp",
     ],
 )

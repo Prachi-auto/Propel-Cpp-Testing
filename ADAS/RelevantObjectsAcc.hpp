@@ -9,10 +9,10 @@ class RelevantObjectsAcc
 public:
     using ObjectList = std::vector<Object>;
     
-    Object getTargetObject(const ObjectList& allObjects);
+    static Object getTargetObject(const ObjectList& allObjects);
 
 private:
-    bool isRelevantForAcc(const Object& object);
+    static bool isRelevantForAcc(const Object& object);
 };
 
 #endif

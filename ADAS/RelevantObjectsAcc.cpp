@@ -2,15 +2,15 @@
 
 Object RelevantObjectsAcc::getTargetObject(const ObjectList& allObjects)
 {
-    Object* targetObject = nullptr;
-    // Filter objects relevant for AEB
+    const Object* targetObject = nullptr;
+    // Filter objects relevant for ACC
     for (const auto& object : allObjects)
     {
         if (isRelevantForAcc(object))
         {
             if(targetObject == nullptr || object.m_position.m_x < targetObject->m_position.m_x)
             {
-                targetObject = const_cast<Object*>(&object);
+                targetObject = &object;
             }
         }
     }
