@@ -37,20 +37,20 @@ void PrintObject(const Object& object)
 
 int main()
 {
-    const auto allObjects = CreateObjects();
+    const auto all_objects = CreateObjects();
 
-    auto targetAeb = RelevantObjectsAeb::getTargetObject(allObjects);
-    auto targetAcc = RelevantObjectsAcc::getTargetObject(allObjects);
+    auto target_aeb = RelevantObjectsAeb::getTargetObject(all_objects);
+    auto target_acc = RelevantObjectsAcc::getTargetObject(all_objects);
 
-    if (targetAeb)
+    if (target_aeb)
     {
         std::cout << "Target object for AEB:" << std::endl;
-        PrintObject(*targetAeb);
+        PrintObject(*target_aeb);
     }
-    if (targetAcc)
+    if (target_acc)
     {
         std::cout << "Target object for ACC:" << std::endl;
-        PrintObject(*targetAcc);
+        PrintObject(*target_acc);
     }
 
     return 0;

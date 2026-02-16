@@ -2,7 +2,7 @@
 #define RELEVANT_OBJECTS_ACC_HPP
 
 #include "Object.hpp"
-#include <vector>
+#include "ObjectList.hpp"
 #include <optional>
 
 class RelevantObjectsAcc

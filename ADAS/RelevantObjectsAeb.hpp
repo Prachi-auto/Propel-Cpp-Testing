@@ -3,7 +3,7 @@
 #define RELEVANT_OBJECTS_AEB_HPP
 
 #include "Object.hpp"
-#include <vector>
+#include "ObjectList.hpp"
 #include <optional>
 
 class RelevantObjectsAeb
