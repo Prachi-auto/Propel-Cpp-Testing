@@ -36,14 +36,10 @@ void PrintObject(const Object& object)
 
 int main()
 {
-    // Example usage of RelevantObjectsAeb and RelevantObjectsAcc
-    RelevantObjectsAeb aeb;
-    RelevantObjectsAcc acc;
-
     std::vector<Object> allObjects = CreateObjects(); // Assume this is populated with objects
 
-    Object targetAeb = aeb.getTargetObject(allObjects);
-    Object targetAcc = acc.getTargetObject(allObjects);
+    Object targetAeb = RelevantObjectsAeb::getTargetObject(allObjects);
+    Object targetAcc = RelevantObjectsAcc::getTargetObject(allObjects);
 
     // Output or further processing of targetAeb and targetAcc
     PrintObject(targetAeb);
