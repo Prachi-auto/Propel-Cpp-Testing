@@ -1,5 +1,6 @@
 #include "RelevantObjectsAeb.hpp"
 #include "RelevantObjectsAcc.hpp"
+#include "ObjectList.hpp"
 #include <iostream>
 
 void CreateObject(Object& object, ObjectId id, float x_position, LaneId lane)
@@ -14,9 +15,9 @@ void CreateObject(Object& object, ObjectId id, float x_position, LaneId lane)
     object.m_lane = lane;
 }
 
-std::vector<Object> CreateObjects()
+ObjectList CreateObjects()
 {
-    std::vector<Object> objects(5);
+    ObjectList objects(5);
 
     CreateObject(objects[0], 1, 10.0f, LaneId::Center);
     CreateObject(objects[1], 2, 20.0f, LaneId::Left);
@@ -36,14 +37,21 @@ void PrintObject(const Object& object)
 
 int main()
 {
-    std::vector<Object> allObjects = CreateObjects(); // Assume this is populated with objects
+    const auto allObjects = CreateObjects();
 
-    Object targetAeb = RelevantObjectsAeb::getTargetObject(allObjects);
-    Object targetAcc = RelevantObjectsAcc::getTargetObject(allObjects);
+    auto targetAeb = RelevantObjectsAeb::getTargetObject(allObjects);
+    auto targetAcc = RelevantObjectsAcc::getTargetObject(allObjects);
 
-    // Output or further processing of targetAeb and targetAcc
-    PrintObject(targetAeb);
-    PrintObject(targetAcc);
+    if (targetAeb)
+    {
+        std::cout << "Target object for AEB:" << std::endl;
+        PrintObject(*targetAeb);
+    }
+    if (targetAcc)
+    {
+        std::cout << "Target object for ACC:" << std::endl;
+        PrintObject(*targetAcc);
+    }
 
     return 0;
 }

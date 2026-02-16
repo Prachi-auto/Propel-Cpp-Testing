@@ -1,20 +1,20 @@
 #include "RelevantObjectsAcc.hpp"
 
-Object RelevantObjectsAcc::getTargetObject(const ObjectList& allObjects)
+std::optional<Object> RelevantObjectsAcc::getTargetObject(const ObjectList& allObjects)
 {
-    const Object* targetObject = nullptr;
+    std::optional<Object> targetObject{};
     // Filter objects relevant for ACC
     for (const auto& object : allObjects)
     {
         if (isRelevantForAcc(object))
         {
-            if(targetObject == nullptr || object.m_position.m_x < targetObject->m_position.m_x)
+            if(!targetObject || object.m_position.m_x < targetObject->m_position.m_x)
             {
-                targetObject = &object;
+                targetObject = object;
             }
         }
     }
-    return targetObject ? *targetObject : Object{};
+    return targetObject;
 }
 
 bool RelevantObjectsAcc::isRelevantForAcc(const Object& object)
