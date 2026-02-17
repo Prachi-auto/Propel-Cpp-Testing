@@ -1,15 +1,22 @@
-load("@rules_cc//cc:defs.bzl", "cc_binary")
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
 
-cc_binary(
-    name = "adas",
+cc_library(
+    name = "adas_core",
     srcs = [
-        "main.cpp",
+        "RelevantObjectsAcc.cpp",
+        "RelevantObjectsAeb.cpp",
+    ],
+    hdrs = [
+        "LaneId.hpp",
         "Object.hpp",
         "ObjectList.hpp",
-        "LaneId.hpp", 
-        "RelevantObjectsAcc.cpp",
         "RelevantObjectsAcc.hpp",
-        "RelevantObjectsAeb.cpp",
         "RelevantObjectsAeb.hpp",
     ],
+    visibility = ["//visibility:public"],
+)
+cc_binary(
+    name = "dry",
+    srcs = ["main.cpp"],
+    deps = [":adas_core"],
 )
