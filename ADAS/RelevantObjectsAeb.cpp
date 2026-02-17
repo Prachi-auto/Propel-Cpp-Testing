@@ -4,11 +4,11 @@ std::optional<Object> RelevantObjectsAeb::getTargetObject(const ObjectList& all_
 {
     std::optional<Object> target_object{};
     // Filter objects relevant for AEB
-    for (const auto& object : allObjects)
+    for (const auto& object : all_objects)
     {
         if (isRelevantForAeb(object, ego_lane))
         {
-            if(!target_Object || object.m_position.m_x < target_object->m_position.m_x)
+            if(!target_object || object.m_position.m_x < target_object->m_position.m_x)
             {
                 target_object = object;
             }

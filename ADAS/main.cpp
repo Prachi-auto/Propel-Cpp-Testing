@@ -39,8 +39,9 @@ int main()
 {
     const auto all_objects = CreateObjects();
 
-    auto target_aeb = RelevantObjectsAeb::getTargetObject(all_objects);
-    auto target_acc = RelevantObjectsAcc::getTargetObject(all_objects);
+    const LaneId ego_lane = LaneId::Center;
+    auto target_aeb = RelevantObjectsAeb::getTargetObject(all_objects, ego_lane);
+    auto target_acc = RelevantObjectsAcc::getTargetObject(all_objects, ego_lane);
 
     if (target_aeb)
     {

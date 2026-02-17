@@ -1,7 +1,7 @@
 load("@rules_cc//cc:defs.bzl", "cc_binary")
 
 cc_binary(
-    name = "dry",
+    name = "adas",
     srcs = [
         "main.cpp",
         "Object.hpp",
