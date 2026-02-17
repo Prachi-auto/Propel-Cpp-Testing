@@ -5,6 +5,7 @@ cc_binary(
     srcs = [
         "main.cpp",
         "Object.hpp",
+        "ObjectList.hpp",
         "LaneId.hpp", 
         "RelevantObjectsAcc.cpp",
         "RelevantObjectsAcc.hpp",
