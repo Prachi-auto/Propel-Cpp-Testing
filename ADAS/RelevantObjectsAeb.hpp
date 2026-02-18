@@ -2,8 +2,8 @@
 #ifndef RELEVANT_OBJECTS_AEB_HPP
 #define RELEVANT_OBJECTS_AEB_HPP
 
-#include "Object.hpp"
-#include "ObjectList.hpp"
+#include "ADAS/Object.hpp"
+#include "ADAS/ObjectList.hpp"
 #include <optional>
 
 class RelevantObjectsAeb

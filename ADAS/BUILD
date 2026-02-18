@@ -14,6 +14,7 @@ cc_library(
         "RelevantObjectsAeb.hpp",
     ],
     visibility = ["//visibility:public"],
+    copts = ["-std=c++17"]
 )
 cc_binary(
     name = "dry",

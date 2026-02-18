@@ -1,8 +1,8 @@
 #ifndef RELEVANT_OBJECTS_ACC_HPP
 #define RELEVANT_OBJECTS_ACC_HPP
 
-#include "Object.hpp"
-#include "ObjectList.hpp"
+#include "ADAS/Object.hpp"
+#include "ADAS/ObjectList.hpp"
 #include <optional>
 
 class RelevantObjectsAcc
