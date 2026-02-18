@@ -8,7 +8,7 @@ std::optional<Object> RelevantObjectsAcc::getTargetObject(const ObjectList& allO
     {
         if (isRelevantForAcc(object, ego_lane))
         {
-            if(!target_object || object.m_position.m_x < target_object->m_position.m_x)
+            if (!target_object || object.m_position.m_x < target_object->m_position.m_x)
             {
                 target_object = object;
             }

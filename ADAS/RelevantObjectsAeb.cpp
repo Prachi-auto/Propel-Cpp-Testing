@@ -8,7 +8,7 @@ std::optional<Object> RelevantObjectsAeb::getTargetObject(const ObjectList& all_
     {
         if (isRelevantForAeb(object, ego_lane))
         {
-            if(!target_object || object.m_position.m_x < target_object->m_position.m_x)
+            if (!target_object || object.m_position.m_x < target_object->m_position.m_x)
             {
                 target_object = object;
             }
