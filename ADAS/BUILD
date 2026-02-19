@@ -5,6 +5,7 @@ cc_library(
     srcs = [
         "RelevantObjectsAcc.cpp",
         "RelevantObjectsAeb.cpp",
+        "RelevantObjectsCommon.cpp",
     ],
     hdrs = [
         "LaneId.hpp",
@@ -12,6 +13,7 @@ cc_library(
         "ObjectList.hpp",
         "RelevantObjectsAcc.hpp",
         "RelevantObjectsAeb.hpp",
+        "RelevantObjectsCommon.hpp",
     ],
     visibility = ["//visibility:public"],
     copts = ["-std=c++17"]

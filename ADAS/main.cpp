@@ -1,6 +1,7 @@
 #include "ADAS/RelevantObjectsAeb.hpp"
 #include "ADAS/RelevantObjectsAcc.hpp"
 #include "ADAS/ObjectList.hpp"
+#include "RelevantObjectsAcc.hpp"
 #include <iostream>
 
 void CreateObject(Object& object, ObjectId id, float x_position, LaneId lane)
@@ -40,8 +41,10 @@ int main()
     const auto all_objects = CreateObjects();
 
     const LaneId ego_lane = LaneId::Center;
-    auto target_aeb = RelevantObjectsAeb::getTargetObject(all_objects, ego_lane);
-    auto target_acc = RelevantObjectsAcc::getTargetObject(all_objects, ego_lane);
+    RelevantObjectsAcc relevant_objects_acc(50.0f);
+    RelevantObjectsAeb relevant_objects_aeb(50.0f);
+    auto target_aeb = relevant_objects_aeb.getTargetObject(all_objects, ego_lane);
+    auto target_acc = relevant_objects_acc.getTargetObject(all_objects, ego_lane);
 
     if (target_aeb)
     {
