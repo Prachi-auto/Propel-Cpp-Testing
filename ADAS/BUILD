@@ -10,6 +10,7 @@ cc_library(
     hdrs = [
         "LaneId.hpp",
         "Object.hpp",
+        "ObjectBuilder.hpp",
         "ObjectList.hpp",
         "RelevantObjectsAcc.hpp",
         "RelevantObjectsAeb.hpp",
