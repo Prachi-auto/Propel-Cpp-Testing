@@ -1,7 +1,6 @@
 #include "ADAS/RelevantObjectsAeb.hpp"
 #include "ADAS/RelevantObjectsAcc.hpp"
 #include "ADAS/ObjectList.hpp"
-#include "ADAS/RelevantObjectsAcc.hpp"
 #include "ADAS/Constants.hpp"
 #include <iostream>
 
@@ -18,12 +17,12 @@ ObjectList CreateObjects()
 {
     ObjectList objects{};
 
-    objects[0] = CreateObject(1, 10.0f, LaneId::Center);
-    objects[1] = CreateObject(2, 20.0f, LaneId::Left);
-    objects[2] = CreateObject(3, 30.0f, LaneId::Right);
-    objects[3] = CreateObject(4, 40.0f, LaneId::Center);
-    objects[4] = CreateObject(5, 60.0f, LaneId::Center);
-    objects[5] = CreateObject(6, 70.0f, LaneId::Right);
+    objects[0] = ObjectBuilder().withId(1).withPosition(10.0f).inLane(LaneId::Center).build();
+    objects[1] = ObjectBuilder().withId(2).withPosition(20.0f).inLane(LaneId::Left).build();
+    objects[2] = ObjectBuilder().withId(3).withPosition(30.0f).inLane(LaneId::Right).build();
+    objects[3] = ObjectBuilder().withId(4).withPosition(40.0f).inLane(LaneId::Center).build();
+    objects[4] = ObjectBuilder().withId(5).withPosition(60.0f).inLane(LaneId::Center).build();
+    objects[5] = ObjectBuilder().withId(6).withPosition(70.0f).inLane(LaneId::Right).build();
 
     return objects;
 }
