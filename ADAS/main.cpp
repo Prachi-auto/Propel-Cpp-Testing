@@ -18,7 +18,7 @@ void CreateObject(Object& object, ObjectId id, float x_position, LaneId lane)
 
 ObjectList CreateObjects()
 {
-    ObjectList objects(6);
+    ObjectList objects(ObjectSelectionConstants::m_number_of_objects);
 
     CreateObject(objects[0], 1, 10.0f, LaneId::Center);
     CreateObject(objects[1], 2, 20.0f, LaneId::Left);
@@ -42,8 +42,8 @@ int main()
     const auto all_objects = CreateObjects();
 
     const LaneId ego_lane = LaneId::Center;
-    RelevantObjectsAcc relevant_objects_acc(50.0f);
-    RelevantObjectsAeb relevant_objects_aeb(50.0f);
+    RelevantObjectsAcc relevant_objects_acc(ObjectSelectionConstants::m_maximum_longitudinal_range_meters);
+    RelevantObjectsAeb relevant_objects_aeb(ObjectSelectionConstants::m_maximum_longitudinal_range_meters);
     auto target_aeb = relevant_objects_aeb.getTargetObject(all_objects, ego_lane);
     auto target_acc = relevant_objects_acc.getTargetObject(all_objects, ego_lane);
 
