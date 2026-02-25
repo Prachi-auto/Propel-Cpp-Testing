@@ -8,6 +8,7 @@ cc_library(
         "RelevantObjectsCommon.cpp",
     ],
     hdrs = [
+        "Constants.hpp",
         "LaneId.hpp",
         "Object.hpp",
         "ObjectBuilder.hpp",
