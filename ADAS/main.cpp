@@ -2,6 +2,7 @@
 #include "ADAS/RelevantObjectsAcc.hpp"
 #include "ADAS/ObjectList.hpp"
 #include "ADAS/Constants.hpp"
+#include "ADAS/ObjectBuilder.hpp"
 #include <iostream>
 
 Object CreateObject(ObjectId id, float x_position, LaneId lane)
