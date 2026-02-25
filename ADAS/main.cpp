@@ -10,18 +10,13 @@ Object CreateObject(ObjectId id, float x_position, LaneId lane)
     Object object{};
     object.m_id = id;
     object.m_position.m_x = x_position;
-    object.m_position.m_y = 0.0f;
-    object.m_velocity.m_x = 0.0f;
-    object.m_velocity.m_y = 0.0f;
-    object.m_acceleration.m_x = 0.0f;
-    object.m_acceleration.m_y = 0.0f;
     object.m_lane = lane;
     return object;
 }
 
 ObjectList CreateObjects()
 {
-    ObjectList objects(ObjectSelectionConstants::m_number_of_objects);
+    ObjectList objects{};
 
     objects[0] = CreateObject(1, 10.0f, LaneId::Center);
     objects[1] = CreateObject(2, 20.0f, LaneId::Left);
